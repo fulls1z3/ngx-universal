@@ -25,10 +25,11 @@ export class ServerTransferState extends TransferState {
         data: {}
       });
 
-      const head = document.children[0].children[0];
+      const html = Array.from(document.children).find(child => child.name === 'html');
+      const head = Array.from(html.children).find(child => child.name === 'head');
 
-      if (head.name !== 'head') {
-        throw new Error('Please have <head> as the first element in your document');
+      if (!head) {
+        throw new Error('<head> not found in the document');
       }
 
       const script = renderer.createElement('script');
