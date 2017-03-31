@@ -25,12 +25,11 @@ export class ServerTransferState extends TransferState {
         data: {}
       });
 
-      const html = Array.from(document.children).find(child => child.name === 'html');
-      const head = Array.from(html.children).find(child => child.name === 'head');
+      const html: any = Array.from(document.children).find((child: any) => child.name === 'html');
+      const head = Array.from(html.children).find((child: any) => child.name === 'head');
 
-      if (!head) {
+      if (!head)
         throw new Error('<head> not found in the document');
-      }
 
       const script = renderer.createElement('script');
       renderer.setValue(script, `window['TRANSFER_STATE'] = ${transferStateString}`);

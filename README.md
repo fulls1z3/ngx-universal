@@ -1,5 +1,7 @@
 # @nglibs/universal-transfer-state [![npm version](https://badge.fury.io/js/%40nglibs%2Funiversal-express-engine.svg)](https://www.npmjs.com/package/@nglibs/universal-transfer-state)
 
+> Please support this project by simply putting a Github star. Share this library with friends on Twitter and everywhere else you can.
+
 > This repository holds the TypeScript source code and distributable bundle of **`@nglibs/universal-transfer-state`**, the state transferring module for **Angular Universal**.
 
 ## Table of contents:
@@ -29,7 +31,7 @@ npm install @nglibs/universal-transfer-state --save
 **Note**: You should have already installed [@nglibs/universal-transfer-http].
 
 ### Examples
-- [@nglibs/universal-example-app] is an officially maintained example application showcasing best practices for **Angular Universal** on `@angular v4.0.0`.
+- [@nglibs/universal-example-app] is an officially maintained example application showcasing best practices for **[@nglibs]** utilities **Angular Universal**/`@angular v4.0.0`.
 
 ### `@nglibs` packages
 
