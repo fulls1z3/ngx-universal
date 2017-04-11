@@ -3,11 +3,11 @@ import { Injectable, RendererFactory2, ViewEncapsulation } from '@angular/core';
 import { PlatformState } from '@angular/platform-server';
 
 // module
-import { TransferState } from './transfer-state';
+import { StateTransferService } from './state-transfer.service';
 
 @Injectable()
-export class ServerTransferState extends TransferState {
-  constructor(private state: PlatformState, private rendererFactory: RendererFactory2) {
+export class ServerStateTransferService extends StateTransferService {
+  constructor(private platformState: PlatformState, private rendererFactory: RendererFactory2) {
     super();
   }
 
@@ -16,8 +16,8 @@ export class ServerTransferState extends TransferState {
    */
   inject(): void {
     try {
-      const document: any = this.state.getDocument();
-      const transferStateString = JSON.stringify(this.toJson());
+      const document: any = this.platformState.getDocument();
+      const state = JSON.stringify(this.toJson());
       const renderer = this.rendererFactory.createRenderer(document, {
         id: '-1',
         encapsulation: ViewEncapsulation.None,
@@ -32,7 +32,7 @@ export class ServerTransferState extends TransferState {
         throw new Error('<head> not found in the document');
 
       const script = renderer.createElement('script');
-      renderer.setValue(script, `window['TRANSFER_STATE'] = ${transferStateString}`);
+      renderer.setValue(script, `window['TRANSFER_STATE'] = ${state}`);
       renderer.appendChild(head, script);
     } catch (e) {
       console.error(e);

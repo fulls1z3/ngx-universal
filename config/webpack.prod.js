@@ -60,10 +60,10 @@ module.exports = {
      *
      * See: http://webpack.github.io/docs/configuration.html#output-filename
      */
-    filename: 'universal-transfer-state.umd.min.js',
+    filename: 'state-transfer.umd.min.js',
 
     libraryTarget: 'umd',
-    library: 'config'
+    library: 'ngx-universal'
   },
 
   /**

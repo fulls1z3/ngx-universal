@@ -9,11 +9,11 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 
 // module
-import { TransferState } from './transfer-state';
+import { StateTransferService } from './state-transfer.service';
 
 @Injectable()
-export class TransferHttp {
-  constructor(private http: Http, protected transferState: TransferState) {
+export class HttpTransferService {
+  constructor(private http: Http, protected stateTransfer: StateTransferService) {
   }
 
   request(uri: string | Request, options?: RequestOptionsArgs): Observable<any> {
@@ -138,10 +138,10 @@ export class TransferHttp {
   }
 
   private setCache(key: string, data: any): any {
-    return this.transferState.set(key, data);
+    return this.stateTransfer.set(key, data);
   }
 
   private getFromCache(key: string): any {
-    return this.transferState.get(key);
+    return this.stateTransfer.get(key);
   }
 }

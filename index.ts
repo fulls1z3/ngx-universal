@@ -2,48 +2,48 @@
 import { NgModule } from '@angular/core';
 
 // module
-import { ServerTransferState } from './src/server-transfer-state';
-import { TransferHttp } from './src/transfer-http';
-import { TransferState } from './src/transfer-state';
+import { ServerStateTransferService } from './src/server-state-transfer.service';
+import { HttpTransferService } from './src/http-transfer.service';
+import { StateTransferService } from './src/state-transfer.service';
 
-export * from './src/server-transfer-state';
-export * from './src/transfer-state';
-export * from './src/transfer-http';
+export * from './src/server-state-transfer.service';
+export * from './src/state-transfer.service';
+export * from './src/http-transfer.service';
 
 // for AoT compilation
-export function getTransferState(): TransferState {
-  const transferState = new TransferState();
-  transferState.initialize(window['TRANSFER_STATE'] || {});
+export function stateTransferFactory(): StateTransferService {
+  const stateTransfer = new StateTransferService();
+  stateTransfer.initialize(window['TRANSFER_STATE'] || {});
 
-  return transferState;
+  return stateTransfer;
 }
 
 @NgModule({
   providers: [
     {
-      provide: TransferState,
-      useFactory: (getTransferState)
+      provide: StateTransferService,
+      useFactory: (stateTransferFactory)
     }
   ]
 })
-export class BrowserTransferStateModule {
+export class BrowserStateTransferModule {
 }
 
 @NgModule({
   providers: [
     {
-      provide: TransferState,
-      useClass: ServerTransferState
+      provide: StateTransferService,
+      useClass: ServerStateTransferService
     }
   ]
 })
-export class ServerTransferStateModule {
+export class ServerStateTransferModule {
 }
 
 @NgModule({
   providers: [
-    TransferHttp
+    HttpTransferService
   ]
 })
-export class TransferHttpModule {
+export class HttpTransferModule {
 }

@@ -17,9 +17,9 @@
   },
   "files": [
     "index.ts",
-    "src/server-transfer-state.ts",
-    "src/transfer-http.ts",
-    "src/transfer-state.ts"
+    "src/http-transfer.service.ts",
+    "src/server-state-transfer.service.ts",
+    "src/state-transfer.service.ts"
   ],
   "exclude": [
     "node_modules"
