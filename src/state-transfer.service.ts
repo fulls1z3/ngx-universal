@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class StateTransferService {
-  private state: Map<string, any>;
+  private readonly state: Map<string, any>;
 
   constructor() {
     this.state = new Map<string, any>();
@@ -25,6 +25,7 @@ export class StateTransferService {
   }
 
   inject(): void {
+    // leave it to implementor
   }
 
   protected toJson(): any {

@@ -13,7 +13,8 @@ import { StateTransferService } from './state-transfer.service';
 
 @Injectable()
 export class HttpTransferService {
-  constructor(private http: Http, protected stateTransfer: StateTransferService) {
+  constructor(private readonly http: Http,
+              protected readonly stateTransfer: StateTransferService) {
   }
 
   request(uri: string | Request, options?: RequestOptionsArgs): Observable<any> {

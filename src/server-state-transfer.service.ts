@@ -10,9 +10,9 @@ export const DEFAULT_STATE_ID = 'STATE';
 
 @Injectable()
 export class ServerStateTransferService extends StateTransferService {
-  constructor(@Inject(STATE_ID) private stateId: string,
-              private platformState: PlatformState,
-              private rendererFactory: RendererFactory2) {
+  constructor(@Inject(STATE_ID) private readonly stateId: string,
+              private readonly platformState: PlatformState,
+              private readonly rendererFactory: RendererFactory2) {
     super();
   }
 

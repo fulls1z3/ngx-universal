@@ -21,7 +21,7 @@ State transferring utility for **Angular Universal**
 ## Prerequisites
 This package depends on `@angular v4.0.0`.
 
-Also, please ensure that you are using **`Typescript v2.1.6`** or higher.
+Also, please ensure that you are using **`Typescript v2.3.4`** or higher.
 
 ## Getting started
 ### Installation
