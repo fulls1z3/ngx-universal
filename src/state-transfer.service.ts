@@ -9,8 +9,11 @@ export class StateTransferService {
     this.state = new Map<string, any>();
   }
 
-  keys(): any {
-    return this.state.keys();
+  initialize(state: Map<string, any>): void {
+    Object.keys(state)
+      .forEach(key => {
+        this.set(key, state[key]);
+      });
   }
 
   get(key: string): any {
@@ -21,22 +24,16 @@ export class StateTransferService {
     return this.state.set(key, value);
   }
 
-  toJson(): any {
+  inject(): void {
+  }
+
+  protected toJson(): any {
     const obj = {};
-    Array.from(this.keys())
+    Array.from(this.state.keys())
       .forEach((key: string) => {
         obj[key] = this.get(key);
       });
+
     return obj;
-  }
-
-  initialize(obj: any): void {
-    Object.keys(obj)
-      .forEach(key => {
-        this.set(key, obj[key]);
-      });
-  }
-
-  inject(): void {
   }
 }

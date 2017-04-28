@@ -1,19 +1,21 @@
-# @nglibs/universal-transfer-state [![npm version](https://badge.fury.io/js/%40nglibs%2Funiversal-express-engine.svg)](https://www.npmjs.com/package/@nglibs/universal-transfer-state)
+# @ngx-universal/state-transfer
+State transferring utility for **Angular Universal**
+
+[![npm version](https://badge.fury.io/js/%40ngx-universal%2Fstate-transfer.svg)](https://www.npmjs.com/package/@ngx-universal/state-transfer)
 
 > Please support this project by simply putting a Github star. Share this library with friends on Twitter and everywhere else you can.
-
-> This repository holds the TypeScript source code and distributable bundle of **`@nglibs/universal-transfer-state`**, the state transferring module for **Angular Universal**.
 
 ## Table of contents:
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
   - [Installation](#installation)
 	- [Examples](#examples)
-	- [`@nglibs` packages](#nglibs-packages)
-	- [Adding `@nglibs/universal-transfer-state` to your project (SystemJS)](#adding-nglibsconfig-to-your-project-systemjs)
+	- [Related packages](#related-packages)
+	- [Adding `@ngx-universal/state-transfer` to your project (SystemJS)](#adding-ngx-universalstate-transfer-to-your-project-systemjs)
   - [app.server.module configuration](#appservermodule-configuration)
   - [app.browser.module configuration](#appbrowsermodule-configuration)
   - [app.module configuration](#appmodule-configuration)
+- [Usage](#usage)
 - [License](#license)
 
 ## Prerequisites
@@ -23,101 +25,143 @@ Also, please ensure that you are using **`Typescript v2.1.6`** or higher.
 
 ## Getting started
 ### Installation
-You can install **`@nglibs/universal-transfer-state`** using `npm`
+You can install **`@ngx-universal/state-transfer`** using `npm`
 ```
-npm install @nglibs/universal-transfer-state --save
+npm install @ngx-universal/state-transfer --save
 ```
-
-**Note**: You should have already installed [@nglibs/universal-transfer-http].
 
 ### Examples
-- [@nglibs/universal-example-app] is an officially maintained example application showcasing best practices for **[@nglibs]** utilities **Angular Universal**/`@angular v4.0.0`.
+- [ng-seed/universal] is an officially maintained seed project, showcasing common patterns and best practices for **`@ngx-universal/state-transfer`**.
 
-### `@nglibs` packages
+### Related packages
+The following packages may be used in conjunction with **`@ngx-universal/state-transfer`**:
+- [@ngx-cache/core]
+- [@ngx-cache/platform-browser]
+- [@ngx-cache/platform-server]
 
-- [@nglibs/config]
-- [@nglibs/meta]
-- [@nglibs/i18n-router]
-- [@nglibs/i18n-router-config-loader]
-- [@nglibs/universal-express-engine]
-- [@nglibs/universal-transfer-state]
-
-### Adding `@nglibs/universal-transfer-state` to your project (SystemJS)
-Add `map` for **`@nglibs/universal-transfer-state`** in your `systemjs.config`
+### Adding `@ngx-universal/state-transfer` to your project (SystemJS)
+Add `map` for **`@ngx-universal/state-transfer`** in your `systemjs.config`
 ```javascript
-'@nglibs/universal-transfer-state': 'node_modules/@nglibs/universal-transfer-state/bundles/universal-transfer-state.umd.min.js'
+'@ngx-universal/state-transfer': 'node_modules/@ngx-universal/state-transfer/bundles/state-transfer.umd.min.js'
 ```
 
 ### app.server.module configuration
-Import `ServerTransferStateModule` and `TransferState` using the mapping `'@nglibs/universal-transfer-state'` and append `ServerTrnasferStatemodule` within the imports property of **app.server.module** (*considering the app.server.module is the server module in Angular Universal application*).
+Import `ServerStateTransferModule` using the mapping `'@ngx-universal/state-transfer'` and append `ServerStateTransferModule.forRoot({...})` within the imports property of **app.server.module** (*considering the app.server.module is the server module in Angular Universal application*).
 
 ```TypeScript
 ...
-import { ServerTransferStateModule, TransferState } from '@nglibs/universal-transfer-state';
+import { ServerStateTransferModule, StateTransferService } from '@ngx-universal/state-transfer';
 ...
 
 @NgModule({
-  bootstrap: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({
       appId: 'my-app-id'
     }),
     ServerModule,
-    ServerTransferStateModule,
+    ServerStateTransferModule.forRoot(),
     AppModule
-  ]
+  ],
+  ...
+  bootstrap: [AppComponent]
 })
 export class AppServerModule {
-  constructor(private readonly transferState: TransferState) {
+  constructor(private readonly stateTransfer: StateTransferService) {
   }
 
   ngOnBootstrap = () => {
-    this.transferState.inject();
+    this.stateTransfer.set('test_key', JSON.stringify({'value': 'test'}));
+    this.stateTransfer.inject();
   }
 }
 ```
 
 ### app.browser.module configuration
-Import `BrowserTransferStateModule` using the mapping `'@nglibs/universal-transfer-state'` and append `BrowserTransferStateModule` within the imports property of **app.browser.module** (*considering the app.browser.module is the browser module in Angular Universal application*).
+Import `BrowserStateTransferModule` using the mapping `'@ngx-universal/state-transfer'` and append `BrowserStateTransferModule.forRoot({...})` within the imports property of **app.browser.module** (*considering the app.browser.module is the browser module in Angular Universal application*).
 
 ```TypeScript
 ...
-import { BrowserTransferStateModule } from '@nglibs/universal-transfer-state';
+import { BrowserStateTransferModule } from '@ngx-universal/state-transfer';
 ...
 
 @NgModule({
-  bootstrap: [LayoutMainComponent],
   imports: [
     BrowserModule.withServerTransition({
       appId: 'my-app-id'
     }),
-    BrowserTransferStateModule,
+    BrowserStateTransferModule.forRoot(),
     AppModule
-  ]
+  ],
+  ...
+  bootstrap: [LayoutMainComponent]
 })
 export class AppBrowserModule {
 }
 ```
 
 ### app.module configuration
-Import `TransferHttpModule` using the mapping `'@nglibs/universal-transfer-state'` and append `TransferHttpModule` within the imports property of **app.module** (*considering the app.module is the core module in Angular application*).
+Import `HttpTransferModule` using the mapping `'@ngx-universal/state-transfer'` and append `HttpTransferModule.forRoot({...})` within the imports property of **app.module** (*considering the app.module is the core module in Angular application*).
 
 ```TypeScript
 ...
-import { TransferHttpModule } from '@nglibs/universal-transfer-state';
+import { HttpTransferModule } from '@ngx-universal/state-transfer';
 ...
 
 @NgModule({
-  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
-    TransferHttpModule,
+    HttpTransferModule.forRoot(),
     ...
   ],
   ...
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   ...
+}
+```
+
+> :+1: So good! **`@ngx-universal/state-transfer`** will now transfer the state from the **server platform** to the **browser platform**. 
+
+## Usage
+`StateTransferService` has the following methods:
+- `initialize(state: Map<string, any>)`: initializes the `STATE` using an existing `Map<string, any>`
+- `get(key: string)`: gets some object from `STATE`, by key 
+- `set(key: string, value: any)`: puts some object to `STATE`
+- `inject()`: injects the `STATE` inside a `<script>` block (*between the `<head>...</head>` tags*)
+
+The following example shows how to read the `STATE` value transferred from the **server platform** to the **browser platform**, using the configuration above.
+
+#### app.browser.module
+```TypeScript
+...
+import { BrowserStateTransferModule, DEFAULT_STATE_ID } from '@ngx-universal/state-transfer';
+...
+
+@NgModule({
+  imports: [
+    BrowserModule.withServerTransition({
+      appId: 'my-app-id'
+    }),
+    BrowserStateTransferModule.forRoot(),
+    AppModule
+  ],
+  ...
+  bootstrap: [LayoutMainComponent]
+})
+export class AppBrowserModule {
+  constructor() {
+    // get `STATE` value (injected by the server platform)
+    let stateValue = undefined;
+    
+    const win: any = window;
+    
+    if (!!win && !!win[DEFAULT_STATE_ID])
+      stateValue = win[DEFAULT_STATE_ID];
+    
+    // do something with the value acquired
+    // whatever you want ...
+  }
 }
 ```
 
@@ -126,14 +170,8 @@ The MIT License (MIT)
 
 Copyright (c) 2017 [Burak Tasci]
 
-[@nglibs]: https://github.com/nglibs
-[@nglibs/universal-example-app]: https://github.com/nglibs/universal-example-app
-[@nglibs/config]: https://github.com/nglibs/config
-[@nglibs/meta]: https://github.com/nglibs/meta
-[@nglibs/i18n-router]: https://github.com/nglibs/i18n-router
-[@nglibs/i18n-router-config-loader]: https://github.com/nglibs/i18n-router-config-loader
-[@nglibs/universal-express-engine]: https://github.com/nglibs/universal-express-engine
-[@nglibs/universal-transfer-state]: https://github.com/nglibs/universal-transfer-state
-[forRoot]: https://angular.io/docs/ts/latest/guide/ngmodule.html#!#core-for-root
-[AoT compilation]: https://angular.io/docs/ts/latest/cookbook/aot-compiler.html
-[Burak Tasci]: http://www.buraktasci.com
+[ng-seed/universal]: https://github.com/ng-seed/universal
+[@ngx-cache/core]: https://github.com/ngx-cache/core
+[@ngx-cache/platform-browser]: https://github.com/ngx-cache/platform-browser
+[@ngx-cache/platform-server]: https://github.com/ngx-cache/platform-server
+[Burak Tasci]: https://github.com/fulls1z3
