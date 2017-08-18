@@ -1,0 +1,11 @@
+{
+  "extends": "../../../tsconfig.json",
+  "files": [
+    "./index.ts",
+    "./src/express-engine.ts"
+  ],
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true
+  }
+}

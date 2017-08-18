@@ -37,7 +37,7 @@ export class HttpTransferService {
    */
   post(url: string, body: any, options?: RequestOptionsArgs): Observable<any> {
     return this.getPostData(url, body, options, (urlRes: string) => {
-      return this.http.post(urlRes, body.options);
+      return this.http.post(urlRes, body, options);
     });
   }
 
@@ -64,7 +64,7 @@ export class HttpTransferService {
    */
   patch(url: string, body: any, options?: RequestOptionsArgs): Observable<any> {
     return this.getPostData(url, body, options, (urlRes: string) => {
-      return this.http.patch(urlRes, body.options);
+      return this.http.patch(urlRes, body, options);
     });
   }
 

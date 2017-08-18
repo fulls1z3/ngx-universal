@@ -1,0 +1,40 @@
+{
+  "name": "@ngx-universal/state-transfer",
+  "version": "0.4.0-beta.2",
+  "description": "State transferring utility for Angular Universal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fulls1z3/ngx-universal.git"
+  },
+  "keywords": [
+    "state",
+    "transfer",
+    "platform-server",
+    "universal",
+    "angular"
+  ],
+  "author": {
+    "name": "Burak Tasci",
+    "email": "me@fulls1z3.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fulls1z3/ngx-universal/issues"
+  },
+  "homepage": "https://github.com/fulls1z3/ngx-universal/tree/master/packages/@ngx-universal/state-transfer#readme",
+  "main": "./bundles/state-transfer.umd.min.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "dependencies": {
+    "tslib": "^1.7.1"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "~4.3.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/platform-server": "^4.0.0",
+    "rxjs": "^5.0.1"
+  }
+}
