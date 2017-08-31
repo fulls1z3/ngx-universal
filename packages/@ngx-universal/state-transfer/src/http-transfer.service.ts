@@ -23,63 +23,42 @@ export class HttpTransferService {
     });
   }
 
-  /**
-   * Performs a request with `get` http method.
-   */
   get(url: string, options?: RequestOptionsArgs): Observable<any> {
     return this.getData(url, options, (urlRes: string, optionsRes: RequestOptionsArgs) => {
       return this.http.get(urlRes, optionsRes);
     });
   }
 
-  /**
-   * Performs a request with `post` http method.
-   */
   post(url: string, body: any, options?: RequestOptionsArgs): Observable<any> {
     return this.getPostData(url, body, options, (urlRes: string) => {
       return this.http.post(urlRes, body, options);
     });
   }
 
-  /**
-   * Performs a request with `put` http method.
-   */
   put(url: string, body: any, options?: RequestOptionsArgs): Observable<any> {
     return this.getData(url, options, (urlRes: string, optionsRes: RequestOptionsArgs) => {
       return this.http.put(urlRes, optionsRes);
     });
   }
 
-  /**
-   * Performs a request with `delete` http method.
-   */
   delete(url: string, options?: RequestOptionsArgs): Observable<any> {
     return this.getData(url, options, (urlRes: string, optionsRes: RequestOptionsArgs) => {
       return this.http.delete(urlRes, optionsRes);
     });
   }
 
-  /**
-   * Performs a request with `patch` http method.
-   */
   patch(url: string, body: any, options?: RequestOptionsArgs): Observable<any> {
     return this.getPostData(url, body, options, (urlRes: string) => {
       return this.http.patch(urlRes, body, options);
     });
   }
 
-  /**
-   * Performs a request with `head` http method.
-   */
   head(url: string, options?: RequestOptionsArgs): Observable<any> {
     return this.getData(url, options, (urlRes: string, optionsRes: RequestOptionsArgs) => {
       return this.http.head(urlRes, optionsRes);
     });
   }
 
-  /**
-   * Performs a request with `options` http method.
-   */
   options(url: string, options?: RequestOptionsArgs): Observable<any> {
     return this.getData(url, options, (urlRes: string, optionsRes: RequestOptionsArgs) => {
       return this.http.options(urlRes, optionsRes);

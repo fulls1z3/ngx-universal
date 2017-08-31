@@ -9,9 +9,6 @@ import { Request, Response, Send } from 'express';
 // module
 import { NgSetupOptions } from './models/ng-setup-options';
 
-/**
- * This holds a cached version of each index used.
- */
 const templateCache: { [key: string]: string } = {};
 
 function getRequestResponseProviders(req: Request, res: Response): Array<Provider> {
@@ -31,16 +28,10 @@ function getRequestResponseProviders(req: Request, res: Response): Array<Provide
   return providers;
 }
 
-/**
- * Get the document at the file path
- */
 function getDocument(filePath: string): string {
   return templateCache[filePath] = templateCache[filePath] || fs.readFileSync(filePath).toString();
 }
 
-/**
- * Handle the request with a given NgModuleRef
- */
 function handleModuleRef(moduleRef: NgModuleRef<{}>, callback: any): void {
   const state = moduleRef.injector.get(PlatformState);
   const appRef = moduleRef.injector.get(ApplicationRef);
@@ -57,9 +48,6 @@ function handleModuleRef(moduleRef: NgModuleRef<{}>, callback: any): void {
     });
 }
 
-/**
- * This is an express engine for handling Angular Applications
- */
 export function ngExpressEngine(setupOptions: NgSetupOptions): any {
   setupOptions.providers = setupOptions.providers || [];
 

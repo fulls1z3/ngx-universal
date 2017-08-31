@@ -25,7 +25,7 @@ export class StateTransferService {
   }
 
   inject(): void {
-    // leave it to implementor
+    // NOTE: not implemented, needs to be overridden by subclasses
   }
 
   protected toJson(): any {
