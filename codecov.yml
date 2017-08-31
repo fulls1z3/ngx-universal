@@ -1,0 +1,10 @@
+coverage:
+  status:
+    project:
+      ngx-universal/express-engine:
+        target: 80%
+        paths: packages/@ngx-universal/express-engine
+    project:
+      ngx-universal/state-transfer:
+        target: 80%
+        paths: packages/@ngx-universal/state-transfer

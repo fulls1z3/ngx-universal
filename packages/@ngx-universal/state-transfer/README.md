@@ -2,6 +2,7 @@
 State transferring utility for **Angular Universal**
 
 [![npm version](https://badge.fury.io/js/%40ngx-universal%2Fstate-transfer.svg)](https://www.npmjs.com/package/@ngx-universal/state-transfer)
+[![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
 
 > Please support this project by simply putting a Github star. Share this library with friends on Twitter and everywhere else you can.
 
@@ -163,7 +164,7 @@ export class AppBrowserModule {
     
     const win: any = window;
     
-    if (!!win && !!win[DEFAULT_STATE_ID])
+    if (win && win[DEFAULT_STATE_ID])
       stateValue = win[DEFAULT_STATE_ID];
     
     // do something with the value acquired

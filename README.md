@@ -1,6 +1,8 @@
 # ngx-universal
 Server platform libraries for **Angular**
 
+[![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
+
 > Please support this project by simply putting a Github star. Share this library with friends on Twitter and everywhere else you can.
 
 ## Packages:
@@ -17,7 +19,7 @@ If you want to file a bug, contribute some code, or improve documentation, pleas
 - [Issue guidelines](CONTRIBUTING.md#submit)
 - [Contributing guidelines](CONTRIBUTING.md)
 - [Coding rules](CONTRIBUTING.md#rules)
-- [ChangeLog](CHANGELOG.md)
+- [Change log](CHANGELOG.md)
 
 ## License
 The MIT License (MIT)
