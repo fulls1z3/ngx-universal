@@ -22,19 +22,17 @@
     "url": "https://github.com/fulls1z3/ngx-universal/issues"
   },
   "homepage": "https://github.com/fulls1z3/ngx-universal/tree/master/packages/@ngx-universal/state-transfer#readme",
-  "main": "./bundles/state-transfer.umd.min.js",
-  "module": "./index.js",
-  "typings": "./index.d.ts",
+  "main": "./bundles/state-transfer.umd.js",
+  "module": "./@ngx-universal/state-transfer.es5.js",
+  "es2015": "./@ngx-universal/state-transfer.js",
+  "typings": "./state-transfer.d.ts",
   "dependencies": {
-    "tslib": "^1.7.1"
-  },
-  "devDependencies": {
-    "@angular/compiler-cli": "~4.3.0"
+    "tslib": "~1.7.1"
   },
   "peerDependencies": {
-    "@angular/core": "^4.0.0",
-    "@angular/http": "^4.0.0",
-    "@angular/platform-server": "^4.0.0",
-    "rxjs": "^5.0.1"
+    "@angular/core": ">=4.0.0 <5.0.0",
+    "@angular/http": ">=4.0.0 <5.0.0",
+    "@angular/platform-server": ">=4.0.0 <5.0.0",
+    "rxjs": ">=5.0.1"
   }
 }

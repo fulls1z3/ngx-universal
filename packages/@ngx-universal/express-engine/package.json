@@ -22,20 +22,15 @@
     "url": "https://github.com/fulls1z3/ngx-universal/issues"
   },
   "homepage": "https://github.com/fulls1z3/ngx-universal/tree/master/packages/@ngx-universal/express-engine#readme",
-  "main": "./bundles/express-engine.umd.min.js",
-  "module": "./index.js",
-  "typings": "./index.d.ts",
+  "main": "./bundles/express-engine.umd.js",
+  "module": "./@ngx-universal/express-engine.es5.js",
+  "es2015": "./@ngx-universal/express-engine.js",
+  "typings": "./express-engine.d.ts",
   "dependencies": {
-    "tslib": "^1.7.1"
-  },
-  "devDependencies": {
-    "express": "^4.15.4",
-    "@angular/compiler-cli": "~4.3.0",
-    "@types/express": "^4.0.36"
+    "tslib": "~1.7.1"
   },
   "peerDependencies": {
-    "@angular/core": "^4.0.0",
-    "@angular/platform-server": "^4.0.0",
-    "rxjs": "^5.0.1"
+    "@angular/core": ">=4.0.0 <5.0.0",
+    "@angular/platform-server": ">=4.0.0 <5.0.0"
   }
 }
