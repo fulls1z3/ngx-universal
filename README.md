@@ -1,6 +1,8 @@
 # ngx-universal
 Server platform libraries for **Angular**
 
+[![CircleCI](https://circleci.com/gh/fulls1z3/ngx-universal.svg?style=shield)](https://circleci.com/gh/fulls1z3/ngx-universal)
+[![coverage](https://codecov.io/github/fulls1z3/ngx-universal/coverage.svg?branch=master)](https://codecov.io/gh/fulls1z3/ngx-universal)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 [![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
 
