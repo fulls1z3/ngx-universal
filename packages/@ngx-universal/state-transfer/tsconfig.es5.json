@@ -10,7 +10,7 @@
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "state-transfer.js",
-    "flatModuleId": "state-transfer",
+    "flatModuleId": "@ngx-universal/state-transfer",
     "genDir": "../../../../.temp/gen-dir/"
   }
 }

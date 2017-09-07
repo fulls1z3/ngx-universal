@@ -10,7 +10,7 @@
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "express-engine.js",
-    "flatModuleId": "express-engine",
+    "flatModuleId": "@ngx-universal/express-engine",
     "genDir": "../../../../.temp/gen-dir/"
   }
 }
