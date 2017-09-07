@@ -1,6 +1,6 @@
 {
   "name": "@ngx-universal/state-transfer",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "State transferring utility for Angular Universal",
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 {
   "name": "@ngx-universal/express-engine",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Express engine for Angular Universal",
   "repository": {
     "type": "git",
