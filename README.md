@@ -17,7 +17,7 @@ than `v4.x.x`, then you should probably choose the appropriate version of this l
 ## Packages:
 Name | Description | NPM
 --- | --- | ---
-[@ngx-universal/express-engine](https://github.com/fulls1z3/ngx-universal/tree/master/packages/@ngx-universal/express-engine) | Express engine for **Angular Universal** | [![npm version](https://badge.fury.io/js/%40ngx-universal%2Fexpress-engine.svg)](https://www.npmjs.com/package/@ngx-universal/express-engine)
+[@ngx-universal/express-engine](https://github.com/fulls1z3/ngx-universal/tree/master/packages/@ngx-universal/express-engine) | DEPRECATED: use [@ng-universal/express-engine] | ---
 [@ngx-universal/state-transfer](https://github.com/fulls1z3/ngx-universal/tree/master/packages/@ngx-universal/state-transfer) | State transferring utility for **Angular Universal** | [![npm version](https://badge.fury.io/js/%40ngx-universal%2Fstate-transfer.svg)](https://www.npmjs.com/package/@ngx-universal/state-transfer)
 
 ### Examples
@@ -37,5 +37,6 @@ Copyright (c) 2017 [Burak Tasci]
 
 [master]: https://github.com/ngx-universal/core/tree/master
 [4.x.x]: https://github.com/ngx-universal/core/tree/4.x.x
+[@ng-universal/express-engine]: https://www.npmjs.com/package/@nguniversal/express-engine
 [ng-seed/universal]: https://github.com/ng-seed/universal
 [Burak Tasci]: https://github.com/fulls1z3

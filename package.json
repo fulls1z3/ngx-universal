@@ -76,7 +76,6 @@
     "silent": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "packages/@ngx-universal/express-engine/src/**.ts",
       "packages/@ngx-universal/state-transfer/src/**.ts"
     ]
   },

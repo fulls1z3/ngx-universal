@@ -172,7 +172,6 @@ Must be one of the following:
 The scope should be the name of the project affected.
 
 The following is the list of supported scopes:
-* **express-engine**
 * **state-transfer**
 
 There are currently a few exceptions to the "use project name" rule:

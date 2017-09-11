@@ -1,17 +1,5 @@
 {
   "@ngx-universal": {
-    "express-engine": {
-      "angularVersion": 4,
-      "bundle": {
-        "globals": {
-          "@angular/platform-server": "ng.platformServer",
-          "fs": "fs",
-          "express": "express"
-        },
-        "external": []
-      },
-      "runTests": false
-    },
     "state-transfer": {
       "angularVersion": 4,
       "bundle": {
