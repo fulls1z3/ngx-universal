@@ -7,7 +7,7 @@ The official [@ng-universal/express-engine] is out and **runs OK**, so this libr
 ## <a name="license"></a> License
 The MIT License (MIT)
 
-Copyright (c) 2017 [Burak Tasci]
+Copyright (c) 2018 [Burak Tasci]
 
 [@ng-universal/express-engine]: https://www.npmjs.com/package/@nguniversal/express-engine
 [ng-seed/universal]: https://github.com/ng-seed/universal

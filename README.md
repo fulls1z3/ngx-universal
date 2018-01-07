@@ -11,32 +11,22 @@ Server platform libraries for **Angular**
 > Please support this project by simply putting a Github star. Share this library with friends on Twitter and everywhere else you can.
 
 #### NOTICE
-> This *[4.x.x] branch* is intented to work with `@angular v4.x.x`. If you're developing on a later release of **Angular**
-than `v4.x.x`, then you should probably choose the appropriate version of this library by visiting the *[master] branch*.
+The official [@ng-universal/express-engine] and [Angular 5.x] are out and **runs OK**, so this library is no longer maintained and **deprecated**.
 
 ## Packages:
 Name | Description | NPM
 --- | --- | ---
 [@ngx-universal/express-engine](https://github.com/fulls1z3/ngx-universal/tree/master/packages/@ngx-universal/express-engine) | DEPRECATED: use [@ng-universal/express-engine] | ---
-[@ngx-universal/state-transfer](https://github.com/fulls1z3/ngx-universal/tree/master/packages/@ngx-universal/state-transfer) | State transferring utility for **Angular Universal** | [![npm version](https://badge.fury.io/js/%40ngx-universal%2Fstate-transfer.svg)](https://www.npmjs.com/package/@ngx-universal/state-transfer)
-
-### Examples
-- [ng-seed/universal] is an officially maintained seed project, showcasing common patterns and best practices for **`ngx-universal`**.
-
-## Contributing
-If you want to file a bug, contribute some code, or improve documentation, please read up on the following contribution guidelines:
-- [Issue guidelines](CONTRIBUTING.md#submit)
-- [Contributing guidelines](CONTRIBUTING.md)
-- [Coding rules](CONTRIBUTING.md#rules)
-- [Change log](CHANGELOG.md)
+[@ngx-universal/state-transfer](https://github.com/fulls1z3/ngx-universal/tree/master/packages/@ngx-universal/state-transfer) | DEPRECATED: use [Angular 5.x] | ---
 
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2017 [Burak Tasci]
+Copyright (c) 2018 [Burak Tasci]
 
 [master]: https://github.com/ngx-universal/core/tree/master
-[4.x.x]: https://github.com/ngx-universal/core/tree/4.x.x
+[5.x.x]: https://github.com/ngx-universal/core/tree/5.x.x
 [@ng-universal/express-engine]: https://www.npmjs.com/package/@nguniversal/express-engine
+[Angular 5.x]: https://github.com/angular/angular
 [ng-seed/universal]: https://github.com/ng-seed/universal
 [Burak Tasci]: https://github.com/fulls1z3
